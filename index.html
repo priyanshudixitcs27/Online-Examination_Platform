@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ExamPro - Online Exam Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            overflow-x: hidden;
+        }
+
+        /* Floating Exam Icons Background */
+        .bg-icon {
+            position: absolute;
+            color: rgba(255,255,255,0.08);
+            font-size: 120px;
+            z-index: 0;
+        }
+
+        .icon1 { top: 80px; left: 60px; }
+        .icon2 { bottom: 100px; right: 80px; }
+        .icon3 { top: 250px; right: 200px; }
+        .icon4 { bottom: 200px; left: 200px; }
+
+        nav {
+            background-color: rgba(0,0,0,0.2);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .hero button {
+            padding: 12px 28px;
+            border: none;
+            background-color: white;
+            color: #764ba2;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .hero button:hover {
+            transform: scale(1.05);
+        }
+
+        .features {
+            background-color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .features h2 {
+            margin-bottom: 40px;
+            font-size: 30px;
+        }
+
+        .feature-box {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #f8f9fc;
+            padding: 25px;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card i {
+            font-size: 40px;
+            color: #764ba2;
+            margin-bottom: 15px;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Exam Icons -->
+    <i class="fas fa-book bg-icon icon1"></i>
+    <i class="fas fa-graduation-cap bg-icon icon2"></i>
+    <i class="fas fa-file-alt bg-icon icon3"></i>
+    <i class="fas fa-pencil-alt bg-icon icon4"></i>
+
+    <nav>
+        <h2>ExamPro</h2>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Online Examination System</h1>
+        <p>Conduct timer-based exams with instant results and secure access.</p>
+        <button>Start Exam</button>
+    </section>
+
+    <section class="features">
+        <h2>Platform Features</h2>
+
+        <div class="feature-box">
+            <div class="card">
+                <i class="fas fa-clock"></i>
+                <h3>Timer Based</h3>
+                <p>Automatic submission after time ends.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Instant Result</h3>
+                <p>Auto score calculation system.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-lock"></i>
+                <h3>Secure Login</h3>
+                <p>User authentication before exam.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 ExamPro | Web Technology PBL
+    </footer>
+
+</body>
+</html>
