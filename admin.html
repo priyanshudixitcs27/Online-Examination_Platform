@@ -1,44 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Add Question</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Faculty Admin | PBL Nexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body class="flex h-screen">
+    <aside class="w-72 bg-white border-r p-8 flex flex-col">
+        <div class="font-bold text-2xl mb-12 text-slate-800 underline decoration-teal-500">Admin Area</div>
+        <nav class="space-y-2 flex-1">
+            <button onclick="show('grading')" class="sidebar-btn active"><i data-lucide="users"></i> Students</button>
+            <button onclick="show('results')" class="sidebar-btn"><i data-lucide="bar-chart-2"></i> Results</button>
+        </nav>
+        <a href="login.html" class="p-4 text-rose-500 font-bold">Logout</a>
+    </aside>
 
-<body>
+    <main class="flex-1 p-12 overflow-y-auto">
+        <section id="grading" class="section active">
+            <h2 class="text-3xl font-black mb-8 text-slate-800">Review Queue</h2>
+            <div class="space-y-4">
+                <div class="glass-card p-6 flex justify-between items-center">
+                    <div><p class="font-bold text-lg">Alex Rivera</p><p class="text-slate-400">Web Tech PBL v1.zip</p></div>
+                    <button onclick="alert('Grade Saved!')" class="bg-teal-600 text-white px-6 py-2 rounded-xl font-bold">Grade</button>
+                </div>
+            </div>
+        </section>
 
-<div class="sidebar">
+        <section id="results" class="section">
+            <h2 class="text-3xl font-black mb-8">Performance Analytics</h2>
+            <div class="glass-card p-10 h-64 flex items-end gap-4">
+                <div class="flex-1 bg-teal-100 h-[40%] rounded-t-xl"></div>
+                <div class="flex-1 bg-teal-500 h-[80%] rounded-t-xl"></div>
+                <div class="flex-1 bg-teal-600 h-[65%] rounded-t-xl"></div>
+                <div class="flex-1 bg-teal-300 h-[95%] rounded-t-xl"></div>
+            </div>
+            <p class="mt-6 text-center text-slate-400 font-bold">Class Submission Rate: 85%</p>
+        </section>
+    </main>
 
-<h2>ExamPro</h2>
-
-<a href="index.html">Home</a>
-<a href="login.html">Login</a>
-<a href="admin.html">Add Question</a>
-<a href="exam.html">Exam</a>
-<a href="result.html">Result</a>
-
-</div>
-
-<div class="main">
-
-<div class="card">
-
-<h2>Add Question</h2>
-
-<input placeholder="Question">
-
-<input placeholder="Option 1">
-<input placeholder="Option 2">
-<input placeholder="Option 3">
-<input placeholder="Option 4">
-
-<input placeholder="Answer">
-
-<button>Save</button>
-
-</div>
-
-</div>
-
+    <script>
+        lucide.createIcons();
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
