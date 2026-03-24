@@ -1,361 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>ExamPro Dashboard</title>
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-
-body{
-margin:0;
-font-family:Segoe UI;
-background:linear-gradient(135deg,#020617,#0f172a,#020617);
-color:white;
-display:flex;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-
-width:230px;
-height:100vh;
-background:linear-gradient(#020617,#020617,#0f172a);
-padding:20px;
-
-box-shadow:0 0 20px black;
-
-}
-
-.sidebar h2{
-color:#38bdf8;
-}
-
-.sidebar a{
-
-display:block;
-color:white;
-padding:10px;
-margin:6px 0;
-cursor:pointer;
-border-radius:6px;
-
-}
-
-.sidebar a:hover{
-
-background:#1e293b;
-
-}
-
-
-/* MAIN */
-
-.main{
-
-flex:1;
-padding:20px;
-
-background:
-radial-gradient(circle at 20% 20%,#0ea5e955,transparent),
-radial-gradient(circle at 80% 60%,#9333ea55,transparent);
-
-}
-
-
-/* TOPBAR */
-
-.topbar{
-
-background:rgba(255,255,255,0.05);
-padding:12px;
-border-radius:8px;
-margin-bottom:20px;
-
-backdrop-filter:blur(10px);
-
-}
-
-
-/* PAGE */
-
-.page{
-display:none;
-}
-
-.active{
-display:block;
-}
-
-
-/* CARD */
-
-.card{
-
-background:rgba(255,255,255,0.08);
-padding:20px;
-border-radius:12px;
-margin:10px 0;
-
-backdrop-filter:blur(10px);
-
-box-shadow:0 0 15px rgba(0,0,0,0.5);
-
-}
-
-
-/* STATS */
-
-.stats{
-
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-
-}
-
-.stat{
-
-flex:1;
-min-width:150px;
-
-background:rgba(255,255,255,0.08);
-padding:15px;
-border-radius:10px;
-
-text-align:center;
-
-}
-
-
-/* INPUT */
-
-input{
-
-width:100%;
-padding:8px;
-margin:5px 0;
-
-}
-
-
-/* BUTTON */
-
-button{
-
-padding:8px 12px;
-background:#38bdf8;
-border:none;
-cursor:pointer;
-border-radius:5px;
-
-}
-
-
-</style>
-
+    <meta charset="UTF-8">
+    <title>Student Dashboard | PBL Nexus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-
-<!-- SIDEBAR -->
-
-<div class="sidebar">
-
-<h2>ExamPro</h2>
-
-<a onclick="show('home')">
-<i class="fa fa-home"></i> Home
-</a>
-
-<a onclick="show('login')">
-<i class="fa fa-user"></i> Login
-</a>
-
-<a onclick="show('admin')">
-<i class="fa fa-plus"></i> Add Question
-</a>
-
-<a onclick="show('exam')">
-<i class="fa fa-file"></i> Exam
-</a>
-
-<a onclick="show('result')">
-<i class="fa fa-chart-bar"></i> Result
-</a>
-
-</div>
-
-
-
-<!-- MAIN -->
-
-<div class="main">
-
-<div class="topbar">
-
-Dashboard Panel
-
-</div>
-
-
-
-<!-- HOME -->
-
-<div id="home" class="page active">
-
-<div class="stats">
-
-<div class="stat">
-<i class="fa fa-user"></i>
-<h3>120</h3>
-Students
-</div>
-
-<div class="stat">
-<i class="fa fa-file"></i>
-<h3>15</h3>
-Exams
-</div>
-
-<div class="stat">
-<i class="fa fa-check"></i>
-<h3>300</h3>
-Results
-</div>
-
-</div>
-
-
-<div class="card">
-
-<h2>Online Examination System</h2>
-
-<p>Web Technology Dashboard UI Project</p>
-
-</div>
-
-</div>
-
-
-
-<!-- LOGIN -->
-
-<div id="login" class="page">
-
-<div class="card">
-
-<h2>Login</h2>
-
-<input placeholder="Username">
-<input placeholder="Password">
-
-<button onclick="show('exam')">
-
-Login
-
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- ADMIN -->
-
-<div id="admin" class="page">
-
-<div class="card">
-
-<h2>Add Question</h2>
-
-<input placeholder="Question">
-
-<input placeholder="Option 1">
-<input placeholder="Option 2">
-<input placeholder="Option 3">
-<input placeholder="Option 4">
-
-<input placeholder="Answer">
-
-<button>Save</button>
-
-</div>
-
-</div>
-
-
-
-<!-- EXAM -->
-
-<div id="exam" class="page">
-
-<div class="card">
-
-<h2>Exam</h2>
-
-<p>HTML stands for ?</p>
-
-<input type="radio"> Hyper Text Markup Language
-<br>
-<input type="radio"> High Tool
-
-<br><br>
-
-<button onclick="show('result')">
-
-Submit
-
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- RESULT -->
-
-<div id="result" class="page">
-
-<div class="card">
-
-<h2>Result</h2>
-
-<p style="font-size:22px;color:#22c55e">
-
-Score : 8 / 10
-
-</p>
-
-</div>
-
-</div>
-
-
-
-</div>
-
-
-
-<script>
-
-function show(id){
-
-let pages=document.querySelectorAll(".page");
-
-pages.forEach(p=>p.classList.remove("active"));
-
-document.getElementById(id).classList.add("active");
-
-}
-
-</script>
-
-
+<body class="flex h-screen">
+    <aside class="w-72 bg-white border-r p-8 flex flex-col">
+        <div class="font-bold text-2xl mb-12 text-teal-600">Nexus.</div>
+        <nav class="space-y-2 flex-1">
+            <button onclick="show('home')" class="sidebar-btn active"><i data-lucide="layout"></i> Overview</button>
+            <button onclick="show('tasks')" class="sidebar-btn"><i data-lucide="check-circle"></i> My Tasks</button>
+            <button onclick="show('upload')" class="sidebar-btn"><i data-lucide="upload-cloud"></i> Submissions</button>
+        </nav>
+        <a href="login.html" class="p-4 text-rose-500 font-bold">Sign Out</a>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto p-12">
+        <section id="home" class="section active">
+            <div class="bg-slate-900 p-12 rounded-[3rem] text-white mb-10">
+                <h2 class="text-4xl font-extrabold mb-2">Hello, Student!</h2>
+                <p class="text-slate-400">Web Technology • Project Progress: 75%</p>
+            </div>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="glass-card p-6"> <p class="text-sm text-slate-400 font-bold">DEADLINE</p> <h3 class="text-2xl font-black">2 Days</h3> </div>
+                <div class="glass-card p-6"> <p class="text-sm text-slate-400 font-bold">CREDITS</p> <h3 class="text-2xl font-black text-teal-600">12.0</h3> </div>
+                <div class="glass-card p-6"> <p class="text-sm text-slate-400 font-bold">RANK</p> <h3 class="text-2xl font-black text-amber-500">#04</h3> </div>
+            </div>
+        </section>
+
+        <section id="tasks" class="section">
+            <h2 class="text-3xl font-black mb-8">Kanban Board</h2>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="glass-card p-8">
+                    <h4 class="font-bold mb-4 text-teal-600 underline">In Progress</h4>
+                    <div class="p-4 bg-slate-50 rounded-xl mb-3">Setup Tailwind Config</div>
+                    <div class="p-4 bg-slate-50 rounded-xl">Write JavaScript Logic</div>
+                </div>
+                <div class="glass-card p-8">
+                    <h4 class="font-bold mb-4 text-slate-400 underline">Completed</h4>
+                    <div class="p-4 bg-slate-50 rounded-xl line-through text-slate-300">Project Proposal</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="upload" class="section">
+            <h2 class="text-3xl font-black mb-8">Submissions</h2>
+            <div class="glass-card p-20 text-center border-4 border-dashed border-slate-100">
+                <p class="mb-6 text-slate-400 font-bold">Drop your index.html here</p>
+                <button onclick="alert('Submission Success!')" class="bg-teal-600 text-white px-8 py-3 rounded-2xl font-bold">Submit Task</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        function show(id) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.sidebar-btn').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
